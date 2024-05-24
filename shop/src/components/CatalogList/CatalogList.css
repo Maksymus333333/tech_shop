@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  line-height: normal; 
+  
+}
+
+.cat {   
+    margin-top: 30px; 
+    position: relative;
+    font-size: 32px;
+    font-family: Roboto;
+    color: #0c0c0c;
+    text-align: left;  
+}
+
+.txt_cat{ 
+margin-top: 10px;     
+position: relative;
+font-size: 20px;
+font-weight: 300;
+font-family: Roboto;
+color: #000;
+text-align: center;
+cursor: pointer;  
+}
+
+.smartphone {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  justify-content: self-start;  
+}
+
+.component-child {
+  margin-top: 20px; 
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  height: 210px;
+  background-color: #bcc5ff;
+  border-radius: 8px; /* Опціонально */
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.component-child:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .component-child:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+
+.group-parent { 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+}
+
+ 
+
+.mask-group-icon,
+.mask-group-icon1,
+.mask-group-icon2,
+.mask-group-icon3,
+.mask-group-icon4,
+.mask-group-iconp {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px; /* Опціонально */ 
+}
+
+.instance-parent {
+  width: 185px;
+  max-width: 100%;
+  height: 246px;
+  position: relative; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.card {
+  display: flex; 
+  flex-direction: row; 
+  gap: 16px;
+  font-size: 15px;
+  color: #000;
+  justify-content: center; /* Вирівнює елементи по центру */
+}
+
+.catalogl { 
+  position: relative;   
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  text-align: left;
+  font-size: 32px; 
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 90px; 
+}
