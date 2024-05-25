@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/tech_shop/static/css/main.335048eb.css",
+    "main.js": "/tech_shop/static/js/main.c53ccd8d.js",
+    "static/media/tv.svg": "/tech_shop/static/media/tv.9c6dc5cc2fd091201461d38e62c74a06.svg",
+    "static/media/column.svg": "/tech_shop/static/media/column.830c6a8185e0c7fe5a5a1e5135cc08ec.svg",
+    "static/media/comp.svg": "/tech_shop/static/media/comp.033128c5056ccd564da83da74686de74.svg",
+    "static/media/laptop.svg": "/tech_shop/static/media/laptop.bd71138ad589d6c1a16826f514959c7e.svg",
+    "static/media/tablet.svg": "/tech_shop/static/media/tablet.302ea9ad3e1414dbbd92e49ea917dfd4.svg",
+    "static/media/phone.svg": "/tech_shop/static/media/phone.afa2c4e49e2d15193467d7d07a21b2c4.svg",
+    "index.html": "/tech_shop/index.html",
+    "main.335048eb.css.map": "/tech_shop/static/css/main.335048eb.css.map",
+    "main.c53ccd8d.js.map": "/tech_shop/static/js/main.c53ccd8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.335048eb.css",
+    "static/js/main.c53ccd8d.js"
+  ]
+}
