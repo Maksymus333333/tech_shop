@@ -11,9 +11,9 @@ function App() {
       <div className="app-container">
         <Navbar /> 
           <Routes>
-            <Route path='/' exact element={<Home/>} />
-            <Route path='/cart' element={<Cart/>} />
-            <Route path='/profile' element={<Profile/>} />
+            <Route path='/tech_shop' element={<Home/>} />
+            <Route path='cart' element={<Cart/>} />
+            <Route path='profile' element={<Profile/>} />
           </Routes> 
       </div>
     </Router>

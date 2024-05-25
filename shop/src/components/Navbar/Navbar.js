@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
 
 <div className = "header">  
-<li  className="Pad_Phones" > <NavLink to = "/"> Pad Phones  </NavLink>  </li>
+<li  className="Pad_Phones" > <NavLink to = "/tech_shop"> Pad Phones  </NavLink>  </li>
 
 <div className="search">
 <div className="icon-search-parent">  
