@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+.Televisions-container { 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    overflow: hidden;  
+  }
+  
+  /* Стилі для заголовка головної сторінки */
+  .Televisions-title {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+ 
+  

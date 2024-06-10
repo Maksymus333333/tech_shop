@@ -1,50 +1,167 @@
 /* Загальні стилі для сторінки */
 .body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Контейнер для списку продуктів */
-  .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-  }
-  
-  /* Стилі для кожного продукту */
-  .product {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-  
-  .product:hover {
-    transform: translateY(-5px);
-  }
-  
-  .product img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-  }
-  
-  .product h2 {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  .product p {
-    font-size: 1rem;
-    color: #666;
-    margin: 10px 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.dis_tx{
+  position: relative;
+  font-size: 32px;
+  font-family: Roboto;
+  color: #0c0c0c;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+/* Контейнер для списку продуктів */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3px;  
+  justify-items: center;   
+   
+}
+
+/* Стилі для кожного продукту */
+.product_ { 
+  display: flex;
+  flex-direction: column; /* Вертикальне розташування елементів */
+   justify-content: space-between; /* Розміщуємо елементи рівномірно */  
+ position: relative; 
+ background-color: #fff; 
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ overflow: hidden; 
+ width: 100%;
+ max-width: 300px;
+ max-height: 500px;
+ text-align: center;
+ transition: transform 0.2s;   
+ cursor: pointer;
+   
+}
+
+.product_:hover {
+  transform: translateY(-5px);
+}
+
+
+.products_img {
+  display: flex;
+    padding-top: 10px; 
+    max-width: 100%;  
+    height: 50%;  
+    border-radius: 8px 8px 0 0; /* Закруглення кутів тільки зверху */  
+    margin: 0 auto;
+}
+
+.product_ h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.product_ p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.discount_tag {
+position: absolute;
+top: 0px;  
+right: 0px;  
+background-color: #ebba1a;
+border-radius: 8px;
+color: #0c0c0c;
+padding: 8px;
+font-size: 18px;
+}
+
+.original_price { 
+font-size: 1rem;
+color: #666;
+margin-bottom: 10px;
+font-family: Roboto;
+text-decoration: line-through;
+text-align: left; /* Додаємо вирівнювання вліво */ 
+padding-left: 10px;
+
+font-size: 14px;
+font-weight: 300;
+}
+
+.discounted_price { 
+font-size: 1rem;
+color: #e60000;
+margin-bottom: 10px;
+font-size: 20px;
+font-family: Roboto; 
+text-align: left; /* Додаємо вирівнювання вліво */ 
+padding-left: 10px; 
+font-weight: 500;
+
+}
+
+
+.icon_heart {   
+width: 20px; /* Фіксована ширина для сердечка */
+  height: 20px; /* Фіксована висота для сердечка */
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.availabilitys {
+display: flex;
+align-items: center; /* Вертикальне вирівнювання по центру */
+justify-content: space-between; /* Простір між елементами */
+height: 18px;
+font-size: 14px;
+color: #169b00;
+font-family: Roboto;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+
+
+.bask_ { 
+font-weight: 500;   
+}
+
+.button_basket {  
+  position: relative;
+  border-radius: 8px;
+  background-color: #091d9e;
+  height: 44px;
+  width: 178px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  color: #f6f6f6;
+  font-family: Roboto;
+  margin: 0 auto; /* Вирівнювання по центру */
+  margin-bottom: 10px;
+}
+
+.main_price{
+  font-size: 1rem;
+color: #000000;
+margin-bottom: 10px; 
+font-size: 20px;
+font-family: Roboto; 
+text-align: left; /* Додаємо вирівнювання вліво */ 
+padding-left: 10px; 
+font-weight: 500;
 }

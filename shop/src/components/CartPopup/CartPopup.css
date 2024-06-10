@@ -1,0 +1,113 @@
+.cart-popup-container {
+    position: fixed;
+    top: 70px; /* Залишаємо верхній край під навбаром */
+    left: 500px;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+  }
+  
+  .cartoverlay {
+    position: fixed; 
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнюючий колір з прозорістю */
+    z-index: 999; /* Забезпечуємо, що блок буде над усіма іншими елементами */
+    
+  }
+  
+  .cart-popup {
+    position: relative; /* Змінюємо на relative, щоб змінити позицію */
+    z-index: 1001; /* Забезпечуємо, що попап завжди буде поверх оверлея */
+      background-color: #f6f6f6;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Тінь тільки знизу */
+  }
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart-header h2 {
+    margin: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .cart-item-details {
+    flex: 1;
+  }
+  
+  .cart-item-name {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .cart-item-price {
+    font-size: 14px;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .total-amount {
+    font-size: 18px;
+  }
+  
+  .amount {
+    font-weight: bold;
+  }
+  
+  .checkout-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

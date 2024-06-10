@@ -1,0 +1,95 @@
+/* Стилі для попапу з категоріями */
+.main-content {
+  padding-top: 80px; /* Відступ зверху для головного контенту, щоб не перекривати навбар */
+}
+
+.popup {
+  position: fixed;  
+   top: 0%;
+  left: 50%;
+  transform: translate(-50%, 14.5%); /* Центрування попапу */
+  z-index: 1000; /* Забезпечуємо, що попап буде над усіма іншими елементами */
+  background-color: #f6f6f6; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px; /* Максимальна ширина попапу */
+  height: 500px;
+  box-sizing: border-box;  
+}
+
+body.popup-open {
+  overflow: hidden; 
+}
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #e0e0e0; /* Розділюємо колонки лініями */
+}
+
+.column:last-child {
+  border-right: none; /* Відміняємо рамку для останньої колонки */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Стилі для окремих категорій */
+.category, .sub-category, .products {
+  padding: 15px 0;
+  color: #333333;
+  cursor: pointer; /* Змінюємо курсор при наведенні, щоб вказати на клікабельність */
+  border-bottom: 1px solid #e0e0e0; /* Розділюємо категорії полосками */
+  display: flex;
+  justify-content: space-between; /* Вирівнюємо елементи по сторонах */
+}
+ 
+.overlay_ {
+  position: fixed;
+  top: 80px; /* Залишаємо верхній край оверлея на рівні верху екрану */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Висота оверлею на весь екран */ 
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнюючий колір з прозорістю */
+  z-index: 999; /* Забезпечуємо, що блок буде над усіма іншими елементами */
+}
+
+/* Стилі для активних категорій та підкатегорій */
+.category.active, .sub-category.active , .products.active {
+  color: #0053ac; /* Зміна кольору тексту для активних категорій та підкатегорій */
+  
+}
+
+/* Додавання кольору тексту для products при наведенні */
+.products:hover {
+  color: #0053ac; /* Змінюємо колір тексту при наведенні */
+}
+
+.category > span:first-child,
+.sub-category > span:first-child {
+  flex: 1; /* Розтягуємо текст на всю доступну ширину */
+}
+
+.category > span:last-child, .sub-category > span:last-child {
+  margin-left: auto; /* Задаємо відступ між текстом і стрілкою */ 
+}
+
+
