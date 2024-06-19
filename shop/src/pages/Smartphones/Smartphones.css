@@ -15,7 +15,49 @@ body {
   .smartphones-title {
     color: #333;
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+  }
+
+  .dis_tx{
+    margin-left: 20px; 
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    
+  }
+  
+  .breadcrumb a {
+    color: #7c7c7c;
+    text-decoration: none;
+  }
+  
+  
+  
+  .breadcrumb .spans {
+    margin: 0 5px;
   }
  
+
+  .smartphone-child {
+    width: 13px;
+    height: 23px;
+    object-fit: contain; 
+    margin-right: 20px;
+    align-self: flex-end; /* Вирівнювання іконки до низу */
+}
+.smartphone-child a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.smartphone1 {
+    display: flex;
+    align-items: flex-end; /* Вирівнювання контейнера до низу */
+    margin-left: 20px;
+    font-size: 32px;
+    color: #0c0c0c;
+}
  

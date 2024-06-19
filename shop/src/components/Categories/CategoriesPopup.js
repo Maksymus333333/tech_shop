@@ -4,6 +4,7 @@ import axios from 'axios';
 import './CategoriesPopup.css';
 
 const CategoriesPopup = ({ togglePopup }) => {
+  // State for categories, subcategories, products, and selected category/subcategory
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -11,37 +12,44 @@ const CategoriesPopup = ({ togglePopup }) => {
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const navigate = useNavigate();
 
+   // Fetch categories on component mount
   useEffect(() => {
     axios.get('http://localhost/my-store-api/api.php/categories')
       .then(response => setCategories(response.data))
       .catch(error => console.error('Error fetching categories:', error));
   }, []);
 
+   // Handle hovering over a category
   const handleCategoryHover = (categoryId) => {
     setSelectedCategory(categoryId);
     setSelectedSubCategory(null);
+    // Fetch subcategories based on the selected category
     axios.get(`http://localhost/my-store-api/api.php/subcategories/${categoryId}`)
       .then(response => setSubCategories(response.data))
       .catch(error => console.error('Error fetching subcategories:', error));
   };
 
+   // Handle hovering over a subcategory
   const handleSubCategoryHover = (subCategoryId) => {
     setSelectedSubCategory(subCategoryId);
+       // Fetch products based on the selected subcategory
     axios.get(`http://localhost/my-store-api/api.php/products/${subCategoryId}`)
       .then(response => setProducts(response.data))
       .catch(error => console.error('Error fetching products:', error));
   };
 
+    // Handle clicking on a category
   const handleCategoryClick = (categoryName) => {
     const categoryRoutes = {
-      'Смартфони': '/smartphones',
-      'Ноутбуки': '/laptops',
-      'Колонки': '/columns',
-      'Компютери': '/computers',
-      'Телевізори': '/televisions',
-      'Планшети': '/tablets'
+      'Smartphones': '/smartphones',
+      'Laptops': '/laptops',
+      'Columns': '/columns',
+      'Computers': '/computers',
+      'Televisions': '/televisions',
+      'Tablets': '/tablets'
     };
 
+      // Handle clicking on a product
     const route = categoryRoutes[categoryName];
     if (route) {
       navigate(route);
@@ -49,6 +57,7 @@ const CategoriesPopup = ({ togglePopup }) => {
     }
   };
 
+    // Handle clicking outside the popup to close it
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
     togglePopup();
@@ -67,6 +76,7 @@ const CategoriesPopup = ({ togglePopup }) => {
       <div className="overlay_" onClick={togglePopup} />
       <div className="popup" onClick={handlePopupClick}>
         <div className="columns">
+             {/* Category list */}
           <div className="column">
             <ul>
               {categories.map((category) => (
@@ -82,6 +92,7 @@ const CategoriesPopup = ({ togglePopup }) => {
               ))}
             </ul>
           </div>
+               {/* Subcategory list */}
           <div className="column">
             {selectedCategory && (
               <ul>
@@ -98,6 +109,7 @@ const CategoriesPopup = ({ togglePopup }) => {
               </ul>
             )}
           </div>
+             {/* Product list */}
           <div className="column">
             {selectedSubCategory && (
               <ul>

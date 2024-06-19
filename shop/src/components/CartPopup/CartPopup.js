@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CartPopup.css';
 
-const CartPopup = ({ cartItems, toggleCart }) => {
-  const [cartProducts] = useState(cartItems);
+const CartPopup = ({ cartItems, toggleCart, removeFromCart }) => {
+    // Calculate the total amount of the items in the cart
+  const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
 
-  const totalAmount = cartProducts.reduce((total, item) => total + item.price, 0);
 
+   // Handle click on overlay to close the cart popup
   const handleOverlayClick = () => {
     toggleCart();
   };
 
+   // Prevent propagation of click events to avoid closing the popup when clicking inside it
   const handlePopupClick = (e) => {
     e.stopPropagation();
   };
@@ -19,29 +21,31 @@ const CartPopup = ({ cartItems, toggleCart }) => {
       <div className="cart-popup-container">
         <div className="cartoverlay" onClick={handleOverlayClick}></div>
         <div className="cart-popup" onClick={handlePopupClick}>
+           {/* Cart header with title and close button */}
           <div className="cart-header">
-            <h2>Останні товари в замовленні</h2>
+            <h2>Latest products in the order</h2>
             <button className="close-btn" onClick={toggleCart}>✕</button>
           </div>
+            {/* List of items in the cart */}
           <div className="cart-items">
-            {cartProducts.map((product, index) => (
+            {cartItems.map((item, index) => (
               <div className="cart-item" key={index}>
-                <img src={product.image} alt={product.name} className="cart-item-image" />
+                <img src={item.image_url} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-details">
-                  <span className="cart-item-name">{product.name}</span>
-                  <span className="cart-item-price">{product.price}  $</span>
-                  <span className="cart-item-quantity">Quantity: {product.quantity}</span>
+                  <span className="cart-item-name">{item.name}</span>
+                  <span className="cart-item-price">{item.price} $</span>
                 </div>
-                <button className="remove-btn">✕</button>
+                <button className="remove-btn" onClick={() => removeFromCart(item)}>✕</button>
               </div>
             ))}
           </div>
+             {/* Footer with total amount and checkout button */}
           <div className="cart-footer">
             <div className="total-amount">
-              <span>Загалом на суму: </span>
-              <span className="amount"> {totalAmount}  $</span>
+              <span>Subtotal: </span>
+              <span className="amount">{totalAmount.toFixed(2)} $</span>
             </div>
-            <button className="checkout-btn">Оформити замовлення</button>
+            <button className="checkout-btn">Place an order</button>
           </div>
         </div>
       </div>

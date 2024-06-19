@@ -1,15 +1,15 @@
-// ProductList.jsx
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './ProductList.css';
 import like from './../catalog_photo/like.svg';
+import vek from './../../pages/ProductDetails/icons/Vector 1.svg';
 
 const ProductList = ({ category, apiEndpoint, addToCart }) => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Робимо запит до вашого PHP скрипту для отримання даних
+  // Fetch products data from the given API endpoint when component mounts or apiEndpoint changes
+  useEffect(() => { 
     fetch(apiEndpoint)
       .then(response => response.json())
       .then(data => setProducts(data))
@@ -17,22 +17,32 @@ const ProductList = ({ category, apiEndpoint, addToCart }) => {
   }, [apiEndpoint]); // Запускаємо цей ефект при зміні apiEndpoint
 
   const formatPrice = (price) => {
-    // Форматування ціни у вигляді "$15 000"
+     // Format price to display as "$15 000"
     return `$${parseInt(price, 10).toLocaleString('en').replace(/,/g, ' ')}`;
   };
 
+    // Calculate the discounted price
   const calculateDiscountedPrice = (price, discount) => {
     const discountedPrice = price - (price * discount) / 100;
-    return discountedPrice.toFixed(2); // Округлення до двох знаків після коми
+    return discountedPrice.toFixed(2); // Round to two decimal places
   };
 
+    // Handle product click to navigate to the product details page
   const handleProductClick = (id) => {
     navigate(`/product/${id}`);
   };
 
   return (
     <>
-      <div className="dis_tx">{category}</div>
+       {/* Header section with category title and back button */}
+  <div className="smartphone2"> 
+<Link to="/tech_shop">
+  <img className="smartphone-child2" alt="" src={vek} />
+  </Link>
+      <div className="main_tx">{category}</div>
+  </div>
+
+      {/* List of products */}
       <div className="product-list">
         {products.map(product => (
           <div key={product.id} className="product_" onClick={() => handleProductClick(product.id)}>
@@ -40,6 +50,7 @@ const ProductList = ({ category, apiEndpoint, addToCart }) => {
             <h2>{product.name}</h2>
             {product.discount > 0 ? (
               <>
+                 {/* Display original and discounted prices if there is a discount */}
                 <div className="original_price">{formatPrice(product.price)}</div>
                 <div className="discounted_price">
                   {formatPrice(calculateDiscountedPrice(product.price, product.discount))}
@@ -47,15 +58,16 @@ const ProductList = ({ category, apiEndpoint, addToCart }) => {
                 <div className="discount_tag">{product.discount}%</div>
               </>
             ) : (
+              // Display only the main price if there is no discount
               <div className="main_price">{formatPrice(product.price)}</div>
             )}
             <div className="availabilitys">
-              <div>В наличии</div>
+              <div>In stock</div>
               <img className="icon_heart" alt="like" src={like} />
             </div>
-            {/* Викликаємо функцію addToCart при натисканні на кнопку "В корзину" */}
+              {/* Add to basket button */}
             <div className="button_basket">
-              <div className="bask_" onClick={() => addToCart(product)}>В корзину</div>
+              <div className="bask_">Add to basket</div>
             </div>
           </div>
         ))} 

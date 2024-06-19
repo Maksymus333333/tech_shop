@@ -1,6 +1,6 @@
 .cart-popup-container {
     position: fixed;
-    top: 70px; /* Залишаємо верхній край під навбаром */
+    top: 75px; /* Залишаємо верхній край під навбаром */
     left: 500px;
     width: 100%; 
     display: flex;
@@ -21,8 +21,8 @@
   
   .cart-popup {
     position: relative; /* Змінюємо на relative, щоб змінити позицію */
-    z-index: 1001; /* Забезпечуємо, що попап завжди буде поверх оверлея */
-      background-color: #f6f6f6;
+    z-index: 999; /* Забезпечуємо, що попап завжди буде поверх оверлея */
+    background-color: #f6f6f6;
     width: 400px;
     padding: 20px;
     border-radius: 5px;
@@ -60,8 +60,8 @@
   }
   
   .cart-item-image {
-    width: 50px;
-    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
     object-fit: cover;
     margin-right: 10px;
   }
@@ -103,7 +103,7 @@
   }
   
   .checkout-btn {
-    background-color: #ff9800;
+    background-color: #091d9e;
     color: white;
     border: none;
     padding: 10px 20px;
