@@ -12,4 +12,13 @@ npm start
 
 Thank you for your attention.
 
- ![image](https://github.com/Maksymus333333/tech_shop/assets/134223557/3faa1f21-8127-4fb8-8657-efc60aca5b15)
+ ![image](https://github.com/Maksymus333333/tech_shop/assets/134223557/332d85c5-df4e-4ec4-bd50-5c0ef5b67695)
+
+
+![image](https://github.com/Maksymus333333/tech_shop/assets/134223557/785b3819-d58f-4c66-971f-5ed346b36e45)
+
+
+![image](https://github.com/Maksymus333333/tech_shop/assets/134223557/42e8b1d8-9cf7-4d5c-9cc0-56844f71555e)
+
+
+
